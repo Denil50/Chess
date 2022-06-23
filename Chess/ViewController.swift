@@ -9,9 +9,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var boardView: BoardView!
+    
+    
+    var chessEngine: ChessEngine = ChessEngine()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        chessEngine.initializeGame()
+        boardView.shadowPieces = chessEngine.pieces
     }
 
 
