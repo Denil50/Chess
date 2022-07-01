@@ -9,6 +9,28 @@ import Foundation
 
 struct ChessEngine {
     var pieces: Set<ChessPiece> = Set<ChessPiece>()
+    
+    mutating func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
+        if fromCol == toCol && fromRow == toRow {
+            return
+        }
+        
+        guard let candidate = pieceAt(col: fromCol, row: fromRow) else {
+            return
+        }
+        
+        pieces.remove(candidate)
+        pieces.insert(ChessPiece(col: toCol, row: toRow, imageName: candidate.imageName))
+    }
+    
+    func pieceAt(col: Int, row: Int) -> ChessPiece? {
+        for piece in pieces {
+            if col == piece.col && row == piece.row {
+                return piece
+            }
+        }
+        return nil
+    }
 
     mutating func initializeGame() {
         pieces.removeAll()

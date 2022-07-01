@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182614062868822100EB815B /* ChessDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182614052868822100EB815B /* ChessDelegate.swift */; };
+		182C1E58286EFD74006EF797 /* gluhoy-stuk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 182C1E57286EFD74006EF797 /* gluhoy-stuk.wav */; };
 		18915F322863234900C35EA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18915F312863234900C35EA0 /* AppDelegate.swift */; };
 		18915F342863234900C35EA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18915F332863234900C35EA0 /* SceneDelegate.swift */; };
 		18915F362863234900C35EA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18915F352863234900C35EA0 /* ViewController.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182614052868822100EB815B /* ChessDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessDelegate.swift; sourceTree = "<group>"; };
+		182C1E57286EFD74006EF797 /* gluhoy-stuk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "gluhoy-stuk.wav"; sourceTree = "<group>"; };
 		18915F2E2863234900C35EA0 /* Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18915F312863234900C35EA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18915F332863234900C35EA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,9 +114,11 @@
 				18915F612863240B00C35EA0 /* BoardView.swift */,
 				18E20F66286459B500C456DD /* ChessPiece.swift */,
 				18E20F6828645B3C00C456DD /* ChessEngine.swift */,
+				182614052868822100EB815B /* ChessDelegate.swift */,
 				18915F352863234900C35EA0 /* ViewController.swift */,
 				18915F372863234900C35EA0 /* Main.storyboard */,
 				18915F3A2863234C00C35EA0 /* Assets.xcassets */,
+				182C1E57286EFD74006EF797 /* gluhoy-stuk.wav */,
 				18915F3C2863234C00C35EA0 /* LaunchScreen.storyboard */,
 				18915F3F2863234C00C35EA0 /* Info.plist */,
 			);
@@ -243,6 +249,7 @@
 				18915F3E2863234C00C35EA0 /* LaunchScreen.storyboard in Resources */,
 				18915F3B2863234C00C35EA0 /* Assets.xcassets in Resources */,
 				18915F392863234900C35EA0 /* Main.storyboard in Resources */,
+				182C1E58286EFD74006EF797 /* gluhoy-stuk.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +276,7 @@
 			files = (
 				18E20F6928645B3C00C456DD /* ChessEngine.swift in Sources */,
 				18915F362863234900C35EA0 /* ViewController.swift in Sources */,
+				182614062868822100EB815B /* ChessDelegate.swift in Sources */,
 				18915F622863240B00C35EA0 /* BoardView.swift in Sources */,
 				18915F322863234900C35EA0 /* AppDelegate.swift in Sources */,
 				18E20F67286459B500C456DD /* ChessPiece.swift in Sources */,
