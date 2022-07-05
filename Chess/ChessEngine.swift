@@ -51,22 +51,12 @@ struct ChessEngine {
         pieces.insert(ChessPiece(col: 3, row: 7, imageName: "Queen-white"))
         pieces.insert(ChessPiece(col: 4, row: 0, imageName: "King-black"))
         pieces.insert(ChessPiece(col: 4, row: 7, imageName: "King-white"))
-        pieces.insert(ChessPiece(col: 0, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 1, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 2, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 3, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 4, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 5, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 6, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 7, row: 1, imageName: "Pawn-black"))
-        pieces.insert(ChessPiece(col: 0, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 1, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 2, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 3, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 4, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 5, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 6, row: 6, imageName: "Pawn-white"))
-        pieces.insert(ChessPiece(col: 7, row: 6, imageName: "Pawn-white"))
+        
+        for col in 0..<8 {
+            pieces.insert(ChessPiece(col: col, row: 1, imageName: "Pawn-black"))
+            pieces.insert(ChessPiece(col: col, row: 6, imageName: "Pawn-white"))
+        }
+        
     }
 }
 
