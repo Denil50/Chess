@@ -65,8 +65,10 @@ class BoardView: UIView {
             chessDelegate?.movePiece(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
         }
         movingImage = nil
-        fromCol = -1
-        fromRow = -1
+        fromCol = nil
+        fromRow = nil
+        
+        setNeedsDisplay()
     }
     
     func drawPieces() {

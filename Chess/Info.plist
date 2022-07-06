@@ -21,5 +21,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>connect game</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_my-service._tcp</string>
+	</array>
 </dict>
 </plist>
