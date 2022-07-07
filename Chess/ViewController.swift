@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     var audioPlayer: AVAudioPlayer!
     
-    var ACK_SERVICE_NAME = "_abc-txtchat._tcp"
     var peerID: MCPeerID!
     var session: MCSession!
     var nearbyServiceAdvertiser: MCNearbyServiceAdvertiser!
@@ -101,7 +100,17 @@ extension ViewController: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print("received data: \(data)")
+        if let move = String(data: data, encoding: .utf8) {
+            let moveArray = move.components(separatedBy: ":")
+            if  let fCol = Int(moveArray[0]),
+                let fRow = Int(moveArray[1]),
+                let toCol = Int(moveArray[2]),
+                let toRow = Int(moveArray[3]) {
+                DispatchQueue.main.async {
+                    self.updateMove(fromCol: fCol, fromRow: fRow, toCol: toCol, toRow: toRow)
+                }
+            }
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
@@ -122,6 +131,15 @@ extension ViewController: MCSessionDelegate {
 extension ViewController: ChessDelegate {
     
     func movePiece(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
+        updateMove(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
+        
+        let move = "\(fromCol):\(fromRow):\(toCol):\(toRow)"
+        if let date = move.data(using: .utf8) {
+            try? session.send(date, toPeers: session.connectedPeers, with: .reliable)
+        }
+    }
+    
+    func updateMove(fromCol: Int, fromRow: Int, toCol: Int, toRow: Int) {
         chessEngine.movePiece(fromCol: fromCol, fromRow: fromRow, toCol: toCol, toRow: toRow)
         boardView.shadowPieces = chessEngine.pieces
         boardView.setNeedsDisplay()

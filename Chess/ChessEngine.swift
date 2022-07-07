@@ -8,6 +8,7 @@
 import Foundation
 
 struct ChessEngine {
+    
     var pieces: Set<ChessPiece> = Set<ChessPiece>()
     var whitesTurn: Bool = true
     
